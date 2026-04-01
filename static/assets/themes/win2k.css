@@ -1,0 +1,891 @@
+/* =====================================================
+   Windows 2000 / Classic Theme for Abyss
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Tahoma&display=swap');
+
+:root,
+* {
+  font-family: "Tahoma", "MS Sans Serif", Arial, sans-serif;
+  --highlight-color: #0a246a;       /* Win2k active titlebar blue */
+  --background-color: #008080;     /* Classic teal desktop */
+  --active-elem: #d4d0c8;           /* Classic silver */
+  --color: #000000;
+  --img-filter: invert(0);
+  --ext-frame-bg: #ffffff;
+  --win-silver: #d4d0c8;
+  --win-white: #ffffff;
+  --win-dark: #808080;
+  --win-darkest: #404040;
+  --win-titlebar: #0a246a;
+  --win-titlebar-end: #a6caf0;
+  --win-border-light: #ffffff;
+  --win-border-dark: #808080;
+  --win-border-darkest: #404040;
+  --win-btn-face: #d4d0c8;
+}
+
+img {
+  filter: var(--img-filter);
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Tahoma", "MS Sans Serif", Arial, sans-serif;
+  color: var(--color);
+  background-color: var(--background-color);
+  background-size: cover;
+  resize: none;
+}
+
+/* ── Particles layer ─────────────────────────────── */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 99.7%;
+  background-color: var(--background-color);
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* ── Header / Chrome bar ─────────────────────────── */
+#headerArea {
+  overflow: visible;
+  width: 100%;
+  border-bottom: 2px solid var(--win-border-darkest);
+  border-top: 2px solid var(--win-border-light);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  height: 125px;
+  background: var(--win-silver);
+  box-shadow: inset -1px -1px 0 var(--win-border-dark), inset 1px 1px 0 var(--win-border-light);
+}
+
+/* ── Left top buttons ────────────────────────────── */
+#leftTopBtns {
+  position: relative;
+  top: 10px;
+  left: 7px;
+  width: 95px;
+  height: 45px;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  background: var(--win-silver);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+#leftTopBtns button {
+  margin-top: 5px;
+  margin-left: 2px;
+  height: 28px;
+  width: 28px;
+  background: var(--win-btn-face);
+  border: none;
+  cursor: pointer;
+  border-top: 2px solid var(--win-border-light);
+  border-left: 2px solid var(--win-border-light);
+  border-right: 2px solid var(--win-border-darkest);
+  border-bottom: 2px solid var(--win-border-darkest);
+  transition: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#leftTopBtns button:active {
+  border-top: 2px solid var(--win-border-darkest);
+  border-left: 2px solid var(--win-border-darkest);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+}
+
+#leftTopBtns button img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  position: static;
+  transform: none;
+  filter: none;
+}
+
+/* ── Tabs Bar ────────────────────────────────────── */
+#tabsBar {
+  position: relative;
+  top: -35px;
+  width: calc(100% - 145px);
+  left: 95px;
+  height: 45px;
+  overflow: hidden;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  margin-left: 16px;
+  white-space: nowrap;
+  user-select: none;
+  border-radius: 0;
+}
+
+#tabsBar::-webkit-scrollbar {
+  display: none;
+}
+
+.tabBtn {
+  height: 28px;
+  width: 200px;
+  text-align: left;
+  outline: none;
+  background: var(--win-btn-face);
+  color: var(--color);
+  cursor: pointer;
+  border-radius: 0;
+  display: inline-block;
+  margin-right: 4px;
+  transition: none;
+  top: 8px;
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid var(--win-border-light);
+  border-left: 2px solid var(--win-border-light);
+  border-right: 2px solid var(--win-border-darkest);
+  border-bottom: 2px solid var(--win-border-darkest);
+}
+
+.tabBtn:hover {
+  background: var(--win-btn-face) !important;
+  color: #000 !important;
+}
+
+.op-tabs-active,
+.active {
+  background: var(--win-silver) !important;
+  color: #000 !important;
+  border-top: 2px solid var(--win-border-darkest) !important;
+  border-left: 2px solid var(--win-border-darkest) !important;
+  border-right: 2px solid var(--win-border-light) !important;
+  border-bottom: 2px solid var(--win-border-light) !important;
+}
+
+.tabBtn .tabTitle {
+  font-size: 11px;
+  margin-left: 30px;
+  display: inline-block;
+  width: 110px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Tahoma", sans-serif;
+}
+
+.tabBtn .tabClose {
+  position: relative;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  rotate: 45deg;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 4px;
+  line-height: 1;
+}
+
+/* ── Tools bar ───────────────────────────────────── */
+#toolsBar {
+  overflow: visible;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: 10;
+  top: -25px;
+  left: 0;
+  width: calc(100% - 21px);
+  height: 50px;
+  padding-left: 13.5px;
+  white-space: nowrap;
+  user-select: none;
+  align-items: center;
+}
+
+#arrowLeftContain,
+#arrowRightContain,
+#reloadBtn {
+  margin-right: 2px;
+  background: var(--win-btn-face);
+  border-top: 2px solid var(--win-border-light);
+  border-left: 2px solid var(--win-border-light);
+  border-right: 2px solid var(--win-border-darkest);
+  border-bottom: 2px solid var(--win-border-darkest);
+  outline: none;
+  cursor: pointer;
+  width: 30px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#arrowLeftContain:active,
+#arrowRightContain:active,
+#reloadBtn:active {
+  border-top: 2px solid var(--win-border-darkest);
+  border-left: 2px solid var(--win-border-darkest);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+}
+
+#toolsBar * {
+  overflow: visible;
+  position: relative;
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  object-fit: contain;
+}
+
+#toolsBar button img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  filter: none;
+}
+
+/* ── Address bar ─────────────────────────────────── */
+#searchBar {
+  margin-left: 8px;
+  width: calc(100% - 300px);
+  display: flex;
+}
+
+#adrbar {
+  width: 100%;
+  height: 20px;
+  background: var(--win-white);
+  border-radius: 0;
+  font-size: 11px;
+  color: #000;
+  padding-left: 4px;
+  position: relative;
+  font-family: 'Tahoma', sans-serif;
+  border-top: 2px solid var(--win-border-dark);
+  border-left: 2px solid var(--win-border-dark);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+  outline: none;
+}
+
+#adrbar::placeholder {
+  color: #808080;
+}
+
+#adrbar2 {
+  width: 300px;
+  height: 22px;
+  background: var(--win-white);
+  border-radius: 0;
+  padding: 0 4px;
+  font-size: 12px;
+  color: #000;
+  position: relative;
+  font-family: 'Tahoma', sans-serif;
+  border-top: 2px solid var(--win-border-dark);
+  border-left: 2px solid var(--win-border-dark);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+  outline: none;
+  font-weight: normal;
+  text-align: left;
+}
+
+#adrbar2:focus {
+  border-radius: 0;
+}
+
+#adrbar2::placeholder {
+  color: #808080;
+}
+
+/* ── Suggestions dropdown ────────────────────────── */
+#suggestions {
+  width: 100%;
+  flex-direction: column;
+  margin-top: 2rem;
+  position: absolute;
+  z-index: 999;
+}
+
+#suggestions div {
+  background: var(--win-white);
+  border: 1px solid var(--win-border-dark);
+  border-top: none;
+  padding-left: 8px;
+  color: #000;
+  height: 20px;
+  width: calc(100% - 8px);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+}
+
+#suggestions div:hover {
+  background: var(--win-titlebar);
+  color: #fff;
+}
+
+/* ── Right button group ──────────────────────────── */
+#rightBtnGroup {
+  position: relative;
+  left: 8px;
+}
+
+#rightToolGroup {
+  position: relative;
+  width: 140px;
+  height: 28px;
+  border-radius: 0;
+  font-size: 0;
+  color: var(--color);
+  outline: none;
+  border: none;
+  display: flex;
+  gap: 2px;
+}
+
+#rightToolGroup button {
+  display: inline-flex;
+  width: 26px;
+  height: 26px;
+  background: var(--win-btn-face);
+  color: var(--color);
+  outline: none;
+  border-top: 2px solid var(--win-border-light);
+  border-left: 2px solid var(--win-border-light);
+  border-right: 2px solid var(--win-border-darkest);
+  border-bottom: 2px solid var(--win-border-darkest);
+  cursor: pointer;
+  transition: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+#rightToolGroup button:active {
+  border-top: 2px solid var(--win-border-darkest);
+  border-left: 2px solid var(--win-border-darkest);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+}
+
+#rightToolGroup button img {
+  width: 16px;
+  height: 16px;
+  position: static;
+  transform: none;
+  filter: none;
+}
+
+/* ── Panic button ────────────────────────────────── */
+#panicBtn {
+  width: 40px;
+  height: 28px;
+  background: var(--win-btn-face);
+  border-radius: 0;
+  font-size: 11px;
+  color: var(--color);
+  outline: none;
+  border-top: 2px solid var(--win-border-light);
+  border-left: 2px solid var(--win-border-light);
+  border-right: 2px solid var(--win-border-darkest);
+  border-bottom: 2px solid var(--win-border-darkest);
+  cursor: pointer;
+  transition: none;
+}
+
+#panicBtn:hover {
+  background: var(--win-btn-face);
+}
+
+/* ── Tab Container ───────────────────────────────── */
+#tabContainer {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  height: calc(100vh - 110px);
+  width: 100%;
+}
+
+#tabTemplate {
+  width: 100%;
+  height: 100%;
+}
+
+.tabFrame {
+  background: var(--win-silver);
+}
+
+/* ── Main Start / New Tab Page ───────────────────── */
+.mainStartContain {
+  width: 83vw;
+  height: 90%;
+  position: relative;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The Win2k "dialog window" wrapping the search */
+.imageContain {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+}
+
+.imageContain div {
+  display: inline-block;
+  position: relative;
+  top: 0;
+}
+
+/* Win2k dialog box */
+.win2k-dialog {
+  background: var(--win-silver);
+  border-top: 2px solid var(--win-border-light);
+  border-left: 2px solid var(--win-border-light);
+  border-right: 2px solid var(--win-border-darkest);
+  border-bottom: 2px solid var(--win-border-darkest);
+  box-shadow: 1px 1px 0 var(--win-border-dark), -1px -1px 0 var(--win-border-light);
+  width: 420px;
+  padding: 0;
+  font-family: 'Tahoma', sans-serif;
+}
+
+.win2k-titlebar {
+  background: linear-gradient(to right, #0a246a, #a6caf0);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  height: 22px;
+  font-family: 'Tahoma', sans-serif;
+}
+
+.win2k-titlebar-title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.win2k-titlebar-title img {
+  width: 14px;
+  height: 14px;
+  filter: none;
+  image-rendering: pixelated;
+}
+
+.win2k-titlebar-btns {
+  display: flex;
+  gap: 2px;
+}
+
+.win2k-titlebar-btn {
+  width: 16px;
+  height: 14px;
+  background: var(--win-btn-face);
+  border-top: 1px solid var(--win-border-light);
+  border-left: 1px solid var(--win-border-light);
+  border-right: 1px solid var(--win-border-darkest);
+  border-bottom: 1px solid var(--win-border-darkest);
+  font-size: 9px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Tahoma', sans-serif;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0;
+  outline: none;
+}
+
+.win2k-body {
+  padding: 12px 14px 14px;
+  background: var(--win-silver);
+}
+
+.win2k-logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0a246a;
+  font-family: 'Tahoma', sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  text-align: center;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
+}
+
+.win2k-label {
+  font-size: 11px;
+  color: #000;
+  margin-bottom: 4px;
+  font-family: 'Tahoma', sans-serif;
+}
+
+.win2k-input-row {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.win2k-input-row input {
+  flex: 1;
+  height: 22px;
+  background: var(--win-white);
+  border-top: 2px solid var(--win-border-dark);
+  border-left: 2px solid var(--win-border-dark);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+  font-size: 12px;
+  font-family: 'Tahoma', sans-serif;
+  color: #000;
+  padding: 0 4px;
+  outline: none;
+  border-radius: 0;
+}
+
+.win2k-input-row input::placeholder {
+  color: #808080;
+}
+
+.win2k-btn {
+  height: 24px;
+  min-width: 70px;
+  background: var(--win-btn-face);
+  border-top: 2px solid var(--win-border-light);
+  border-left: 2px solid var(--win-border-light);
+  border-right: 2px solid var(--win-border-darkest);
+  border-bottom: 2px solid var(--win-border-darkest);
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+  color: #000;
+  cursor: pointer;
+  padding: 0 10px;
+  white-space: nowrap;
+  outline: none;
+  border-radius: 0;
+}
+
+.win2k-btn:active {
+  border-top: 2px solid var(--win-border-darkest);
+  border-left: 2px solid var(--win-border-darkest);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+}
+
+.win2k-separator {
+  border: none;
+  border-top: 1px solid var(--win-border-dark);
+  border-bottom: 1px solid var(--win-border-light);
+  margin: 10px 0;
+}
+
+.win2k-footer-links {
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+}
+
+.win2k-footer-links a {
+  color: #0a246a;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.win2k-footer-links a:hover {
+  color: #ff0000;
+}
+
+.win2k-splash {
+  font-size: 11px;
+  color: #808080;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 8px;
+  font-family: 'Tahoma', sans-serif;
+}
+
+/* ── iFrame / webview ────────────────────────────── */
+.extFrame {
+  overflow: auto;
+}
+
+iframe {
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: var(--ext-frame-bg);
+  position: relative;
+}
+
+/* ── Settings / App cards ────────────────────────── */
+.abyssCard {
+  height: 300px;
+  width: 550px;
+  min-width: 30px;
+  padding: 20px;
+  background: var(--win-silver);
+  border-radius: 0;
+  border-top: 2px solid var(--win-border-light);
+  border-left: 2px solid var(--win-border-light);
+  border-right: 2px solid var(--win-border-darkest);
+  border-bottom: 2px solid var(--win-border-darkest);
+}
+
+.abyssCard h1 {
+  position: absolute;
+  font-family: "Tahoma", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 0px;
+  white-space: nowrap;
+  line-height: 0.7;
+  color: #000;
+}
+
+.settingCards {
+  display: flex;
+  justify-content: safe center;
+  align-items: center;
+  row-gap: 20px;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+
+.settingsHeader {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Tahoma', sans-serif;
+  color: #000;
+}
+
+.appsHeader {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Tahoma', sans-serif;
+  color: #000;
+}
+
+#settingContainer {
+  position: absolute;
+  width: 210px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#settingContainer h2 {
+  margin: -40px 0 0 0;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 11px;
+  color: #000;
+}
+
+#settingContainer button,
+#settingContainer input,
+#settingContainer select {
+  top: 50px;
+  width: 210px;
+  height: 22px;
+  background: var(--win-white);
+  border-radius: 0;
+  outline: none;
+  border-top: 2px solid var(--win-border-dark);
+  border-left: 2px solid var(--win-border-dark);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+  font-size: 11px;
+  color: #000;
+  transition: none;
+  padding: 0 5px;
+  font-family: 'Tahoma', sans-serif;
+  font-weight: normal;
+  position: absolute;
+  left: 0;
+  text-align: left;
+}
+
+#settingContainer button {
+  background: var(--win-btn-face);
+  border-top: 2px solid var(--win-border-light);
+  border-left: 2px solid var(--win-border-light);
+  border-right: 2px solid var(--win-border-darkest);
+  border-bottom: 2px solid var(--win-border-darkest);
+  cursor: pointer;
+  text-align: center;
+}
+
+#settingContainer button:active {
+  border-top: 2px solid var(--win-border-darkest);
+  border-left: 2px solid var(--win-border-darkest);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+}
+
+#settingContainer input::placeholder {
+  color: #808080;
+}
+
+/* Category search/select */
+#categorySelect {
+  position: absolute;
+  width: 150px;
+  height: 22px;
+  background-color: var(--win-white);
+  border-radius: 0;
+  border-top: 2px solid var(--win-border-dark);
+  border-left: 2px solid var(--win-border-dark);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+  left: 50%;
+  transform: translateX(10%);
+  top: 157px;
+  color: #000;
+  font-family: "Tahoma", sans-serif;
+  font-size: 11px;
+  text-align: left;
+  outline: none;
+}
+
+#categorySearch {
+  position: absolute;
+  width: 150px;
+  height: 22px;
+  background-color: var(--win-white);
+  border-radius: 0;
+  border-top: 2px solid var(--win-border-dark);
+  border-left: 2px solid var(--win-border-dark);
+  border-right: 2px solid var(--win-border-light);
+  border-bottom: 2px solid var(--win-border-light);
+  left: 50%;
+  transform: translateX(-110%);
+  top: 155px;
+  color: #000;
+  font-family: "Tahoma", sans-serif;
+  font-size: 11px;
+  text-align: left;
+  outline: none;
+  padding: 0 4px;
+}
+
+#categorySearch::placeholder {
+  color: #808080;
+}
+
+/* App card */
+.appCard {
+  height: 300px;
+  width: 250px;
+  min-width: 30px;
+  padding: 20px;
+  background: var(--win-silver);
+  border-radius: 0;
+  border-top: 2px solid var(--win-border-light);
+  border-left: 2px solid var(--win-border-light);
+  border-right: 2px solid var(--win-border-darkest);
+  border-bottom: 2px solid var(--win-border-darkest);
+}
+
+/* Tab favicon */
+#tabFaviconHolder {
+  left: 6px;
+  top: 5px;
+  height: 18px;
+  position: absolute;
+  width: 18px;
+  background-color: transparent;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+#tabFaviconHolder img {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transform: none;
+  position: absolute;
+  object-fit: contain;
+  filter: none;
+}
+
+/* Bookmarks */
+.bookmark {
+  display: inline;
+  font-size: 11px;
+  user-select: none;
+  cursor: pointer;
+  font-family: 'Tahoma', sans-serif;
+}
+
+.bookmarkClose {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 14px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+#bookmarksBar {
+  display: inline-block;
+  padding-left: 8px;
+  position: relative;
+  bottom: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: 100%;
+  font-size: 11px;
+}
+
+/* Autofill */
+#autofill-results {
+  position: absolute;
+}

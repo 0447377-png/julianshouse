@@ -6,7 +6,7 @@ if (isMobile) {
 
 window.tHs = new ThemeSystem();
 
-var darkTheme = new Theme(document.getElementById("default-theme"), "Moon"); // I do not have programming ineptitude, it's just that this works and I don't really care to change it from the older version of the theme system.
+var darkTheme = new Theme(document.getElementById("default-theme"), "Win2k"); // Windows 2000 theme by default
 tHs.addTheme(darkTheme);
 tHs.setActiveTheme(darkTheme);
 
@@ -29,7 +29,7 @@ function prependHttps(url) {
   }
   return url;
 }
-var chosenParticleState = localStorage.getItem("particleState") || "on";
+var chosenParticleState = localStorage.getItem("particleState") || "off"; // Win2k: particles off by default for clean desktop look
 
 
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -232,19 +232,13 @@ document.getElementById("adrbar").addEventListener("focus", function () {
 document.getElementById("adrbar").addEventListener("blur", function () {
   setTimeout(function() {
     suggestionsList.style.display = 'none';
-    searchInput.style.borderBottomLeftRadius = "38px";
-    searchInput.style.borderBottomRightRadius = "38px";
-    searchInput.style.borderTopLeftRadius = "38px";
-    searchInput.style.borderTopRightRadius = "38px";
+    // Win2k: keep flat borders, no border-radius changes
   }, 300); // unnoticeable delay, just so that the form handles clicks before it dissapears
 });
 
 setInterval(() => {
   if (suggestionsList.querySelector('div') && suggestionsList.style.display == 'flex') {
-    searchInput.style.borderBottomLeftRadius = "0px";
-    searchInput.style.borderBottomRightRadius = "0px";
-    searchInput.style.borderTopLeftRadius = "19px";
-    searchInput.style.borderTopRightRadius = "19px";
+    // Win2k: no border-radius changes needed
   }
 }, 100);
 searchInput.addEventListener('input', function() {
@@ -466,6 +460,10 @@ let splashtext = [
   "shoutout owen, ramsey, and levi",
   "co owned by wyatt batdorf",
   "enzo is interesting...",
+  "windows 2000 professional",
+  "it is now safe to browse the internet",
+  "your computer has performed an illegal search",
+  "click start to begin",
 ]
 
 const runService = async (url, override, overrideadrbar) => {

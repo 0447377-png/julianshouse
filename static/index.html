@@ -20,7 +20,7 @@
     <link
       rel="stylesheet"
       id="default-theme"
-      href="assets/themes/moon.css"
+      href="assets/themes/win2k.css"
       defer
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@
     <script src="index.js" defer></script>
   </head>
 
-  <body style="background: black">
+  <body style="background: #008080">
     <div id="particles-js">
     <!-- to avoid users getting flashbanged entering the site and having a theme be loaded -->
     <div id="headerArea">
@@ -358,38 +358,56 @@
       </center>
     </div>
     <div id="tabTemplate" style="display: block">
-
       <div class="mainStartContain extFrame">
         <div class="imageContain">
           <div>
-            <h1>abyss</h1>
-            <p id="quote">penis</p>
-              <input
-                id="adrbar2"
-                type="url"
-                placeholder="type here to search..."
-              />
+            <!-- Win2k-style dialog window -->
+            <div class="win2k-dialog">
+              <!-- Title bar -->
+              <div class="win2k-titlebar">
+                <div class="win2k-titlebar-title">
+                  <!-- Globe icon inline SVG (pixelated Windows 2000 globe) -->
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:none;position:static;transform:none;width:14px;height:14px;">
+                    <circle cx="7" cy="7" r="6" fill="#a6caf0" stroke="#ffffff" stroke-width="1"/>
+                    <ellipse cx="7" cy="7" rx="2.5" ry="6" stroke="#ffffff" stroke-width="0.8" fill="none"/>
+                    <line x1="1" y1="7" x2="13" y2="7" stroke="#ffffff" stroke-width="0.8"/>
+                    <line x1="2" y1="4" x2="12" y2="4" stroke="#ffffff" stroke-width="0.6"/>
+                    <line x1="2" y1="10" x2="12" y2="10" stroke="#ffffff" stroke-width="0.6"/>
+                  </svg>
+                  Abyss
+                </div>
+                <div class="win2k-titlebar-btns">
+                  <button class="win2k-titlebar-btn" title="Minimize" aria-label="Minimize">_</button>
+                  <button class="win2k-titlebar-btn" title="Maximize" aria-label="Maximize">&#9633;</button>
+                  <button class="win2k-titlebar-btn" title="Close" aria-label="Close" style="font-weight:bold;">&#x2715;</button>
+                </div>
+              </div>
+              <!-- Dialog body -->
+              <div class="win2k-body">
+                <div class="win2k-logo">Abyss</div>
+                <p class="win2k-splash" id="quote"></p>
+                <hr class="win2k-separator">
+                <p class="win2k-label">Address or search query:</p>
+                <div class="win2k-input-row">
+                  <input
+                    id="adrbar2"
+                    type="url"
+                    placeholder="Type a URL or search term..."
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                  <button class="win2k-btn" onclick="runService(document.getElementById('adrbar2').value)">Go</button>
+                </div>
+                <hr class="win2k-separator">
+                <div class="win2k-footer-links">
+                  <a id="invite" onclick="runService('discord.gg/goabyss')" tabindex="0">Discord</a>
+                  <a onclick="runService('https://intoabyss.org/github')" tabindex="0">GitHub</a>
+                  <span style="margin-left:auto;color:#808080;font-size:10px;">&copy; Abyss Services LLC 2024</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <p><a id= "invite" onclick="runService('discord.gg/goabyss')" style="font-size: 20px;
-          font-weight: 500;
-          position: absolute;
-          top: calc(100% - 25px);
-          left: 0%;
-        text-decoration: none; cursor:pointer;">Discord</a><a style="font-size: 20px;
-          font-weight: 500;
-          position: absolute;
-          top: calc(100% - 25px);
-          left: calc(0% + 100px);
-        text-decoration: none; cursor:pointer;" onclick="runService('https://intoabyss.org/github')">Github</a></p>
-        <p style="font-size: 16px;
-        font-weight: 300;
-        position: absolute;
-        top: calc(100% - 38px);
-        left: calc(100% - 270px);
-      text-decoration: none; ">Copyright Abyss Services LLC 2024</p>
-
       </div>
     </div>
 
